@@ -7,7 +7,6 @@ module.exports = {
     'prettier',
   ],
   root: true,
-  files: ['**/*.ts?(x)'],
   env: {
     node: true,
     jest: true,
