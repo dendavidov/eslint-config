@@ -1,0 +1,11 @@
+{
+  "npm": {
+    "publish": false
+  },
+  "git": {
+    "tag": false,
+    "push": true,
+    "commit": true,
+    "commitMessage": "Prepare to release v${version}"
+  }
+}
