@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "prettier": "^2.4.1",
-    "release-it": "^14.11.6"
+    "release-it": "^14.11.7"
   },
   "files": [
     "index.js",
