@@ -1,6 +1,6 @@
 {
   "name": "@dendavidov/eslint-config",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "eslint config",
   "main": "index.js",
   "scripts": {
@@ -11,15 +11,15 @@
   "license": "ISC",
   "devDependencies": {
     "prettier": "^2.6.2",
-    "release-it": "^14.14.1"
+    "release-it": "^14.14.2"
   },
   "files": [
     "index.js",
     "jest.js"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.18.0",
-    "@typescript-eslint/parser": "^5.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
