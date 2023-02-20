@@ -1,4 +1,4 @@
-const config = require('./src/jest');
+const config = require('./jest');
 
 describe('jest', () => {
   it('has plugins section', () => {
