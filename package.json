@@ -1,6 +1,6 @@
 {
   "name": "@dendavidov/eslint-config",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "description": "eslint config",
   "main": "src/index.js",
   "license": "MIT",
@@ -47,6 +47,6 @@
     "prettier": "^2.8.4"
   },
   "overrides": {
-    "optionator" : "0.9.3"
+    "optionator": "0.9.3"
   }
 }
