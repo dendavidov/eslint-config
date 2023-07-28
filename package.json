@@ -44,7 +44,7 @@
     "conventional-changelog-conventionalcommits": "^6.0.0",
     "husky": "^8.0.3",
     "jest": "^29.4.3",
-    "prettier": "^2.8.4"
+    "prettier": "^3.0.0"
   },
   "overrides": {
     "optionator": "0.9.3"
