@@ -1,6 +1,6 @@
 {
   "name": "@dendavidov/eslint-config",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "description": "eslint config",
   "main": "src/index.js",
   "license": "MIT",
