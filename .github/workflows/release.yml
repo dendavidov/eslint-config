@@ -19,14 +19,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20.12
 
       - name: Install dependencies
         run: npm ci
 
       - name: Run release
-        run:
-          npm i -g semantic-release@20 && npm run release
+        run: |
+          npm install -g semantic-release@23
+          npm run release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
