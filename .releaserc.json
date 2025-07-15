@@ -9,8 +9,12 @@
           { "type": "feat", "release": "minor" },
           { "type": "fix", "release": "patch" },
           { "type": "build", "release": "patch" },
+          { "type": "build", "breaking": true, "release": "major" },
           { "type": "chore", "release": "patch" },
-          { "type": "perf", "release": "patch" }
+          { "type": "chore", "breaking": true, "release": "major" },
+          { "breaking": true, "release": "major" },
+          { "type": "perf", "release": "patch" },
+          { "type": "perf", "breaking": true, "release": "major" }
         ],
         "parserOpts": {
           "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]

@@ -6,7 +6,11 @@
 
 # @dendavidov/eslint-config
 
-Opinionated eslint-config for TypeScript-based Node.js services.
+Opinionated ESLint flat config for TypeScript-based Node.js projects.
+
+- **ESLint 9+ flat config**
+- **Node.js 22.x LTS or higher required**
+- **TypeScript, Prettier, and Jest support out of the box**
 
 ## Installation
 
@@ -16,23 +20,46 @@ npm i -D @dendavidov/eslint-config
 
 ## Usage
 
-Add .eslintrc.json in the root of your project
+Create `eslint.config.js` in the root of your project:
+
+**CommonJS:**
+```js
+const config = require('@dendavidov/eslint-config');
+module.exports = config;
+```
+
+**ESM:**
+```js
+import config from '@dendavidov/eslint-config';
+export default config;
+```
+
+Or extend with your own rules:
+```js
+import config from '@dendavidov/eslint-config';
+
+export default [
+  ...config,
+  {
+    rules: {
+      // Your custom rules
+    }
+  }
+];
+```
+
+Add script to package.json:
 ```json
 {
-  "extends": "@dendavidov/eslint-config"
-}
-```
-Add script to package.json -> scripts:
-```
-{
-  ...
   "scripts": {
-    ...
-    "lint": "eslint './src/**/*.{ts,tsx}'"
-  },
-  ...
+    "lint": "eslint './src/**/*.{ts,tsx,js,jsx}'"
+  }
 }
 ```
+
+## Node.js Version
+
+This config requires **Node.js 22.x LTS or higher**.
 
 ## Contributing
 
