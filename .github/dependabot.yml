@@ -3,11 +3,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
     commit-message:
-      prefix: "build: "
+      prefix: 'build: '
     assignees:
-      - "dendavidov"
+      - 'dendavidov'
