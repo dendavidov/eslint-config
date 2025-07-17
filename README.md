@@ -10,7 +10,7 @@ Opinionated ESLint flat config for TypeScript-based Node.js projects.
 
 - **ESLint 9+ flat config**
 - **Node.js 22.x LTS or higher required**
-- **TypeScript, Prettier, and Jest support out of the box**
+- **TypeScript, Prettier, Jest, and Security rules out of the box**
 
 ## Installation
 
