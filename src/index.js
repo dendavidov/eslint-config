@@ -18,7 +18,8 @@ module.exports = [
       jest: jestPlugin,
     },
     rules: {
-      ...tseslint.configs['eslint-recommended'].rules,
+      // use flat config recommended rules from @typescript-eslint
+      ...tseslint.configs['flat/eslint-recommended'].rules,
       ...tseslint.configs.recommended.rules,
       ...prettierPlugin.configs.recommended.rules,
       'prettier/prettier': 'error',
