@@ -1,6 +1,5 @@
 const config = require('./index.js');
 const flatConfig = config.default || config;
-console.log('DEBUG imported config:', flatConfig);
 
 describe('@dendavidov/eslint-config (flat config)', () => {
   it('should export a flat config array', () => {
@@ -20,7 +19,7 @@ describe('@dendavidov/eslint-config (flat config)', () => {
     expect(main.rules).toHaveProperty('prettier/prettier', 'error');
     const ruleKeys = Object.keys(main.rules);
     expect(ruleKeys).toEqual(
-      expect.arrayContaining(['@typescript-eslint/ban-ts-comment', 'prettier/prettier']),
+      expect.arrayContaining(['@typescript-eslint/ban-ts-comment', 'prettier/prettier', 'no-var']),
     );
   });
 
