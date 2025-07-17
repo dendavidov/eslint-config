@@ -8,4 +8,4 @@ test/
 .npmignore
 .prettierrc
 .releaserc.json
-.commitlint.config
+commitlint.config.js
