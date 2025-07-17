@@ -2,6 +2,7 @@ const tseslint = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const prettierPlugin = require('eslint-plugin-prettier');
 const jestPlugin = require('eslint-plugin-jest');
+const securityPlugin = require('eslint-plugin-security');
 
 /** @type {import('@eslint/eslintrc').FlatConfig[]} */
 module.exports = [
@@ -16,12 +17,14 @@ module.exports = [
       '@typescript-eslint': tseslint,
       prettier: prettierPlugin,
       jest: jestPlugin,
+      security: securityPlugin,
     },
     rules: {
       // use flat config recommended rules from @typescript-eslint
       ...tseslint.configs['flat/eslint-recommended'].rules,
       ...tseslint.configs.recommended.rules,
       ...prettierPlugin.configs.recommended.rules,
+      ...securityPlugin.configs.recommended.rules,
       'prettier/prettier': 'error',
     },
   },
