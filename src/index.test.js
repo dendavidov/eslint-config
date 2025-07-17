@@ -35,6 +35,9 @@ describe('@dendavidov/eslint-config (flat config)', () => {
     );
     expect(testConfig).toBeDefined();
     expect(testConfig.plugins).toHaveProperty('jest');
-    expect(testConfig.rules).toHaveProperty('jest/expect-expect');
+    expect(testConfig.rules).toHaveProperty('jest/no-conditional-expect');
+    expect(testConfig.files).toEqual(
+      expect.arrayContaining(['**/__tests__/**/*', '**/*.{spec,test}.*']),
+    );
   });
 });
