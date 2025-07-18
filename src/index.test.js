@@ -7,17 +7,20 @@ describe('@dendavidov/eslint-config (flat config)', () => {
     expect(flatConfig.length).toBeGreaterThan(0);
   });
 
-  it('should include TypeScript, Prettier, Jest, and Security plugins', () => {
+  it('should include TypeScript, Prettier, Jest, Security, and Import plugins', () => {
     const main = flatConfig[0];
     expect(main.plugins).toHaveProperty('@typescript-eslint');
     expect(main.plugins).toHaveProperty('prettier');
     expect(main.plugins).toHaveProperty('jest');
     expect(main.plugins).toHaveProperty('security');
+    expect(main.plugins).toHaveProperty('import');
   });
 
-  it('should apply Prettier, TypeScript, and Security recommended rules', () => {
+  it('should apply Prettier, TypeScript, Security, and Import rules', () => {
     const main = flatConfig[0];
     expect(main.rules).toHaveProperty('prettier/prettier', 'error');
+    expect(main.rules).toHaveProperty('import/no-unresolved', 'error');
+    expect(main.rules).toHaveProperty('import/order');
     const ruleKeys = Object.keys(main.rules);
     expect(ruleKeys).toEqual(
       expect.arrayContaining([
@@ -25,6 +28,8 @@ describe('@dendavidov/eslint-config (flat config)', () => {
         'prettier/prettier',
         'no-var',
         'security/detect-bidi-characters',
+        'import/no-unresolved',
+        'import/order',
       ]),
     );
   });
@@ -42,5 +47,13 @@ describe('@dendavidov/eslint-config (flat config)', () => {
     );
     expect(testConfig.languageOptions.globals).toHaveProperty('describe');
     expect(testConfig.languageOptions.globals).toHaveProperty('it');
+  });
+
+  it('should include import settings with TypeScript resolver', () => {
+    const main = flatConfig[0];
+    expect(main.settings).toHaveProperty('import/resolver');
+    expect(main.settings['import/resolver']).toHaveProperty('typescript');
+    expect(main.settings['import/resolver']).toHaveProperty('node');
+    expect(main.settings['import/parsers']).toHaveProperty('@typescript-eslint/parser');
   });
 });
