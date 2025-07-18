@@ -68,7 +68,7 @@ src/
 - **Registry**: npm public registry only
 - **Scope**: Uses `@dendavidov` scoped package name
 - **Versioning**: Follow semantic versioning strictly
-- **Files**: Only include essential files (`src/index.js`, `src/jest.js`, `LICENSE`, `README.md`)
+- **Files**: Only include essential files (`src/index.js`, `src/index.d.ts`, `LICENSE`, `README.md`)
 
 ## Common Tasks and Patterns
 
