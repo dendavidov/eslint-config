@@ -31,7 +31,7 @@ module.exports = [
   {
     files: ['**/__tests__/**/*', '**/*.{spec,test}.*'],
     languageOptions: {
-      globals: jestPlugin.environments.globals.globals,
+      globals: { ...jestPlugin.environments.globals.globals },
     },
     plugins: {
       jest: jestPlugin,
