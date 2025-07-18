@@ -39,5 +39,7 @@ describe('@dendavidov/eslint-config (flat config)', () => {
     expect(testConfig.files).toEqual(
       expect.arrayContaining(['**/__tests__/**/*', '**/*.{spec,test}.*']),
     );
+    expect(testConfig.languageOptions.globals).toHaveProperty('describe');
+    expect(testConfig.languageOptions.globals).toHaveProperty('it');
   });
 });
