@@ -11,6 +11,7 @@ Opinionated ESLint flat config for TypeScript-based Node.js projects.
 - **ESLint 9+ flat config**
 - **Node.js 22.x LTS or higher required**
 - **TypeScript, Prettier, Jest, and Security rules out of the box**
+- **Jest globals automatically available in test files**
 
 ## Installation
 
