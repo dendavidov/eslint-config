@@ -3,6 +3,7 @@ const tsParser = require('@typescript-eslint/parser');
 const prettierPlugin = require('eslint-plugin-prettier');
 const jestPlugin = require('eslint-plugin-jest');
 const securityPlugin = require('eslint-plugin-security');
+const importPlugin = require('eslint-plugin-import');
 
 /** @type {import('@eslint/eslintrc').FlatConfig[]} */
 module.exports = [
@@ -18,6 +19,7 @@ module.exports = [
       prettier: prettierPlugin,
       jest: jestPlugin,
       security: securityPlugin,
+      import: importPlugin,
     },
     rules: {
       // use flat config recommended rules from @typescript-eslint
@@ -26,6 +28,50 @@ module.exports = [
       ...prettierPlugin.configs.recommended.rules,
       ...securityPlugin.configs.recommended.rules,
       'prettier/prettier': 'error',
+
+      // Import rules
+      'import/no-unresolved': 'error',
+      'import/named': 'error',
+      'import/default': 'error',
+      'import/namespace': 'error',
+      'import/no-duplicates': 'error',
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type',
+          ],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+        },
+      ],
+      'import/no-unused-modules': 'warn',
+      'import/no-relative-parent-imports': 'off',
+      'import/no-relative-packages': 'warn',
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      },
     },
   },
   {
