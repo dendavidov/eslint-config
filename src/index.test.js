@@ -63,6 +63,7 @@ describe('@dendavidov/eslint-config (flat config)', () => {
 
   describe('integration usage', () => {
     const tempDirs = [];
+    const configFilePath = path.join(__dirname, 'index.js');
 
     const createTempProject = () => {
       const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'eslint-config-'));
@@ -114,7 +115,7 @@ describe('@dendavidov/eslint-config (flat config)', () => {
       const cwd = createTempProject();
       const eslint = new ESLint({
         cwd,
-        overrideConfigFile: true,
+        overrideConfigFile: configFilePath,
         overrideConfig: flatConfig,
         errorOnUnmatchedPattern: false,
       });
@@ -130,7 +131,7 @@ describe('@dendavidov/eslint-config (flat config)', () => {
       const cwd = createTempProject();
       const eslint = new ESLint({
         cwd,
-        overrideConfigFile: true,
+        overrideConfigFile: configFilePath,
         overrideConfig: flatConfig,
         errorOnUnmatchedPattern: false,
       });
