@@ -8,6 +8,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      HUSKY: 0
     environment:
       name: publishEnv
     steps:
