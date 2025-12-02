@@ -42,7 +42,13 @@
       }
     ],
     "@semantic-release/github",
-    "@semantic-release/npm",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "npm version ${nextRelease.version} --git-tag-version=false --allow-same-version",
+        "publishCmd": "npm publish --provenance --access public"
+      }
+    ],
     [
       "@semantic-release/git",
       {
