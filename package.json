@@ -54,7 +54,7 @@
     "husky": "^9.1.7",
     "jest": "^30.0.4",
     "prettier": "^3.6.2",
-    "semantic-release": "^23.1.1"
+    "semantic-release": "^25.0.2"
   },
   "overrides": {
     "glob": "^11.1.0",
