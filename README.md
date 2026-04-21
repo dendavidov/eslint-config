@@ -15,10 +15,14 @@ Opinionated ESLint flat config for TypeScript-based Node.js projects.
 
 ## Installation
 
+Add a single dev dependency — **ESLint is bundled** as a normal dependency of `@dendavidov/eslint-config`, so you do not install `eslint`, plugins, or parsers yourself; they come in transitively.
+
 ```bash
 pnpm add -D @dendavidov/eslint-config
 # or: npm i -D @dendavidov/eslint-config
 ```
+
+Run the CLI with `npx eslint` or `pnpm exec eslint` (or a `lint` script that calls `eslint`), which resolves the binary from your install tree. Your project pins one package version; ESLint’s semver is chosen by this config’s `dependencies`.
 
 ## Usage
 
