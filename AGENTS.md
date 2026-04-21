@@ -6,7 +6,7 @@ This is `@dendavidov/eslint-config` - an opinionated ESLint flat configuration p
 
 **Key Characteristics:**
 - **Target Environment**: Node.js 22.x LTS or higher
-- **Configuration Format**: ESLint 9+ flat config (modern approach)
+- **Configuration Format**: ESLint 10+ flat config (modern approach)
 - **Language Focus**: TypeScript with JavaScript support
 - **Integration**: Prettier for code formatting, Jest for testing
 - **Distribution**: Published to npm as a public package
@@ -22,11 +22,11 @@ The main configuration (`src/index.js`) exports an array of flat config objects:
 - `@typescript-eslint/eslint-plugin` & `@typescript-eslint/parser`: TypeScript support
 - `eslint-plugin-prettier` & `eslint-config-prettier`: Prettier integration
 - `eslint-plugin-jest`: Jest testing framework support
-- `eslint-plugin-import`: Import/export linting
+- `eslint-plugin-import-x`: Import/export linting
 
 ### Design Philosophy
 - **Opinionated**: Enforces consistent coding standards without excessive configuration
-- **Modern**: Uses ESLint 9+ flat config format (not legacy `.eslintrc`)
+- **Modern**: Uses ESLint 10+ flat config format (not legacy `.eslintrc`)
 - **Comprehensive**: Covers TypeScript, formatting, and testing in one package
 - **Minimal Dependencies**: Only includes essential plugins
 
@@ -55,9 +55,9 @@ src/
 ## Critical Constraints
 
 ### ESLint Version Requirements
-- **Minimum**: ESLint 9.31.0+ (for flat config support)
+- **Minimum**: ESLint 10.0.0+ (flat config)
 - **Breaking Change**: This package does NOT support legacy ESLint configurations
-- **Migration**: Users upgrading from ESLint <9 need configuration migration
+- **Migration**: Users on ESLint 9 need compatible plugin versions and flat config before moving to ESLint 10
 
 ### Node.js Version Policy
 - **Supported**: Node.js 22.x LTS and higher only
