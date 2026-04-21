@@ -10,7 +10,7 @@
 
 We provide security updates for the **current major version only** (v2.x.x).
 
-**Node.js Requirement**: `≥22.0.0`
+**Node.js Requirement**: **24.x** per `package.json` `engines.node`. The maintainer repo pins an exact patch in `.nvmrc` / `Dockerfile` for builds and automated updates.
 
 We follow semantic versioning and recommend always using the latest version for the most up-to-date security fixes. Security patches are released as patch versions (e.g., 2.1.3).
 

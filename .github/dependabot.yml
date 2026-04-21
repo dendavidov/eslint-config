@@ -11,3 +11,26 @@ updates:
       prefix: 'build: '
     assignees:
       - 'dendavidov'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'build: '
+    assignees:
+      - 'dendavidov'
+
+  # Bumps the `node` Docker image tag; keep `.nvmrc` + package.json engines in sync (verify-node-pins).
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'build: '
+    assignees:
+      - 'dendavidov'
+    ignore:
+      - dependency-name: 'node'
+        update-types:
+          - 'version-update:semver-major'

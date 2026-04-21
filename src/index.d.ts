@@ -1,7 +1,7 @@
-import type { FlatConfig } from '@eslint/eslintrc';
+import type { Linter } from 'eslint';
 
 /**
  * Flat config array for ESLint 10+
  */
-declare const config: FlatConfig[];
-export default config;
+declare const config: Linter.Config[];
+export = config;

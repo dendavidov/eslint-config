@@ -5,7 +5,8 @@ Thanks for your interest in contributing! This is a small ESLint configuration p
 ## Getting Started
 
 ### Prerequisites
-- Node.js 22.0.0 or higher
+- Node.js **24.x** (`engines.node`). For local dev, use the exact patch from `.nvmrc` (`nvm use`, `fnm use`, or `mise install`).
+- Dependabot may open a PR that bumps the `node` image in `Dockerfile`; update `.nvmrc` to the **same** patch version in that branch so `pnpm test` (which runs `scripts/verify-node-pins.cjs`) passes.
 - [pnpm](https://pnpm.io/installation) (version pinned in `package.json` as `packageManager`)
 
 ### Setup

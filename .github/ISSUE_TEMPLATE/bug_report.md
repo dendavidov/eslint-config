@@ -15,7 +15,7 @@ A clear and concise description of what the bug is and which rule or behaviour i
 Please fill in the versions you are using:
 - `eslint-config` version: <!-- e.g. 2.0.0 -->
 - ESLint version: <!-- e.g. 9.0.0 -->
-- Node.js version: <!-- e.g. 22.0.0 -->
+- Node.js version: <!-- e.g. 24.0.0 -->
 - Package manager & version (npm / yarn / pnpm): <!-- e.g. pnpm 8.7.0 -->
 - Other relevant plugins / parsers: <!-- e.g. @typescript-eslint/parser 6.4.0 -->
 

@@ -9,7 +9,7 @@
 Opinionated ESLint flat config for TypeScript-based Node.js projects.
 
 - **ESLint 10+ flat config**
-- **Node.js 22.x LTS or higher required**
+- **Node.js 24.x required** (`engines.node`); this repo pins an exact patch in `.nvmrc` / `Dockerfile` for CI
 - **TypeScript, Prettier, Jest, and Security rules out of the box**
 - **Jest globals automatically available in test files**
 
@@ -61,7 +61,7 @@ Add script to package.json:
 
 ## Node.js Version
 
-This config requires **Node.js 22.x LTS or higher**.
+This config requires **Node.js 24.x** (see `engines.node` on npm). Development of this package uses a **pinned patch** in `.nvmrc` (and `Dockerfile`) so CI and Dependabot stay aligned.
 
 ## Contributing
 

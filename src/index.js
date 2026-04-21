@@ -5,7 +5,7 @@ const jestPlugin = require('eslint-plugin-jest');
 const securityPlugin = require('eslint-plugin-security');
 const { importX } = require('eslint-plugin-import-x');
 
-/** @type {import('@eslint/eslintrc').FlatConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   {
     files: ['**/*.{ts,tsx,js,jsx}'],

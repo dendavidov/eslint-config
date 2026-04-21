@@ -5,7 +5,7 @@
 This is `@dendavidov/eslint-config` - an opinionated ESLint flat configuration package specifically designed for TypeScript-based Node.js projects. The package provides a ready-to-use ESLint configuration that enforces coding standards and integrates seamlessly with modern development tools.
 
 **Key Characteristics:**
-- **Target Environment**: Node.js 22.x LTS or higher
+- **Target Environment**: Node.js 24.x with a pinned patch (`.nvmrc`, `engines.node`, `Dockerfile` kept in sync)
 - **Configuration Format**: ESLint 10+ flat config (modern approach)
 - **Language Focus**: TypeScript with JavaScript support
 - **Integration**: Prettier for code formatting, Jest for testing
@@ -33,7 +33,7 @@ The main configuration (`src/index.js`) exports an array of flat config objects:
 ## Development Guidelines
 
 ### Code Standards
-1. **Node.js Compatibility**: All code must be compatible with Node.js 22+
+1. **Node.js Compatibility**: All code must be compatible with the pinned Node.js 24.x patch
 2. **Module Format**: Use CommonJS (`module.exports`, `require()`) for main config
 3. **TypeScript Definitions**: Include comprehensive `.d.ts` files for TypeScript users
 4. **Testing**: All features must have Jest tests with meaningful assertions
@@ -60,7 +60,7 @@ src/
 - **Migration**: Users on ESLint 9 need compatible plugin versions and flat config before moving to ESLint 10
 
 ### Node.js Version Policy
-- **Supported**: Node.js 22.x LTS and higher only
+- **Supported**: Node.js 24.x per `engines.node`; development uses a pinned patch (`.nvmrc` / `Dockerfile`)
 - **Engine Enforcement**: `package.json` enforces this via `engines.node`
 - **Rationale**: Leverages modern Node.js features and ESM support
 
