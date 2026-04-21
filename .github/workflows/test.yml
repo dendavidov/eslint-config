@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+# Use Node 24 for JS-based actions (checkout, pnpm/setup); see GitHub Actions changelog.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,8 +19,7 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
+        # Version comes from package.json "packageManager" (do not set "version" here).
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
