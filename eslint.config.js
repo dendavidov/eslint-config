@@ -1,15 +1,18 @@
 'use strict';
 
 /**
- * Repo-only ESLint config. The published rules in `src/index.js` assume TS/ESM-style
- * projects; this repo uses CommonJS, so we relax a few rules for our own files.
+ * This repository’s ESLint flat config (ESLint 10+).
+ * Extends the published package in `src/index.js` with overrides for CommonJS in this repo.
  */
 const base = require('./src/index.js');
 
 module.exports = [
+  {
+    ignores: ['**/node_modules/**', '**/pnpm-lock.yaml', '**/.git/**'],
+  },
   ...base,
   {
-    files: ['eslint.config.js', '.eslintrc.js', 'src/**/*.js', 'scripts/**/*.cjs'],
+    files: ['eslint.config.js', 'src/**/*.js', 'scripts/**/*.cjs'],
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
       'import-x/order': 'off',
