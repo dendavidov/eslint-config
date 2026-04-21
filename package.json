@@ -9,6 +9,7 @@
     "test": "node scripts/verify-node-pins.cjs && NODE_OPTIONS=--experimental-vm-modules jest --watchAll=false",
     "format": "prettier --write .",
     "format:check": "prettier --check ./src",
+    "lint": "eslint .",
     "release": "semantic-release",
     "prepare": "husky"
   },
