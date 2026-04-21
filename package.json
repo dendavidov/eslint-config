@@ -1,6 +1,6 @@
 {
   "name": "@dendavidov/eslint-config",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "description": "ESLint flat config for TypeScript/Node.js projects, supporting Node.js 24.x.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -48,7 +48,9 @@
     "node": ">=24.0.0 <25"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["unrs-resolver"]
+    "onlyBuiltDependencies": [
+      "unrs-resolver"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
