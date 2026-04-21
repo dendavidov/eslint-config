@@ -9,8 +9,8 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll=false",
     "format": "prettier --write .",
     "format:check": "prettier --check ./src",
-    "release": "npx semantic-release",
-    "prepare": "npx husky install"
+    "release": "semantic-release",
+    "prepare": "husky"
   },
   "author": "Denis Davydov mail@dendavidov.com",
   "repository": {
@@ -41,8 +41,12 @@
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-security": "^4.0.0"
   },
+  "packageManager": "pnpm@10.32.0",
   "engines": {
     "node": ">=22"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["unrs-resolver"]
   },
   "devDependencies": {
     "@commitlint/cli": "^20.0.0",

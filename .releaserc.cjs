@@ -53,14 +53,14 @@ module.exports = {
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "npm version ${nextRelease.version} --git-tag-version=false --allow-same-version",
-        publishCmd: "npm publish --provenance --access public"
+        prepareCmd: "pnpm version ${nextRelease.version} --no-git-tag-version --allow-same-version",
+        publishCmd: "pnpm publish --provenance --access public"
       }
     ],
     [
       "@semantic-release/git",
       {
-        assets: ["package.json", "package-lock.json"],
+        assets: ["package.json", "pnpm-lock.yaml"],
         message: "chore(release): ${nextRelease.version} [skip ci]"
       }
     ]

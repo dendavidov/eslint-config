@@ -6,13 +6,13 @@ Thanks for your interest in contributing! This is a small ESLint configuration p
 
 ### Prerequisites
 - Node.js 22.0.0 or higher
-- npm
+- [pnpm](https://pnpm.io/installation) (version pinned in `package.json` as `packageManager`)
 
 ### Setup
 1. Fork and clone the repository
-2. Run `npm install`
+2. Run `pnpm install`
 3. Make your changes
-4. Test with `npm test`
+4. Test with `pnpm test`
 
 ## What to Contribute
 
@@ -29,14 +29,14 @@ Thanks for your interest in contributing! This is a small ESLint configuration p
 ## Development
 
 ### Scripts
-- `npm test` - Run tests
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check formatting
+- `pnpm test` - Run tests
+- `pnpm run format` - Format code with Prettier
+- `pnpm run format:check` - Check formatting
 
 ### Making Changes
 1. Create a feature branch: `git checkout -b fix/your-change`
 2. Make your changes in the `src/` directory
-3. Ensure tests pass: `npm test`
+3. Ensure tests pass: `pnpm test`
 4. Commit using [conventional commits](https://www.conventionalcommits.org/):
    - `feat:` for new features
    - `fix:` for bug fixes

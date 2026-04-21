@@ -104,6 +104,7 @@ The package should work seamlessly in:
 
 ### Dependency Management
 - Keep dependencies minimal and focused
+- Use **pnpm** in this repo (`pnpm-lock.yaml`, `packageManager` in `package.json`); CI uses `pnpm install --frozen-lockfile`
 - Regular updates for security and compatibility
 - Pin major versions to prevent breaking changes
 - Test dependency updates thoroughly
