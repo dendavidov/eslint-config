@@ -8,10 +8,11 @@
 
 Opinionated ESLint flat config for TypeScript-based Node.js projects.
 
-- **ESLint 10+ flat config**
+- **ESLint 9+ flat config**
 - **Node.js 24.x required** (`engines.node`); this repo pins an exact patch in `.nvmrc` / `Dockerfile` for CI
 - **TypeScript, Prettier, Jest, and Security rules out of the box**
 - **Jest globals automatically available in test files**
+- **`eslint-plugin-import`** with **`eslint-import-resolver-typescript`** (and node) so `import/no-unresolved` respects `tsconfig.json` / path aliases where configured
 
 ## Installation
 

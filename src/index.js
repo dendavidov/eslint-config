@@ -3,7 +3,7 @@ const tsParser = require('@typescript-eslint/parser');
 const prettierPlugin = require('eslint-plugin-prettier');
 const jestPlugin = require('eslint-plugin-jest');
 const securityPlugin = require('eslint-plugin-security');
-const { importX } = require('eslint-plugin-import-x');
+const importPlugin = require('eslint-plugin-import');
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
@@ -19,7 +19,7 @@ module.exports = [
       prettier: prettierPlugin,
       jest: jestPlugin,
       security: securityPlugin,
-      'import-x': importX,
+      import: importPlugin,
     },
     rules: {
       // use flat config recommended rules from @typescript-eslint
@@ -29,13 +29,13 @@ module.exports = [
       ...securityPlugin.configs.recommended.rules,
       'prettier/prettier': 'error',
 
-      // Import rules (eslint-plugin-import-x)
-      'import-x/no-unresolved': 'error',
-      'import-x/named': 'error',
-      'import-x/default': 'error',
-      'import-x/namespace': 'error',
-      'import-x/no-duplicates': 'error',
-      'import-x/order': [
+      // Import rules (eslint-plugin-import)
+      'import/no-unresolved': 'error',
+      'import/named': 'error',
+      'import/default': 'error',
+      'import/namespace': 'error',
+      'import/no-duplicates': 'error',
+      'import/order': [
         'error',
         {
           groups: [
@@ -55,13 +55,12 @@ module.exports = [
           },
         },
       ],
-      // ESLint 10 removed FileEnumerator; import-x cannot enforce this until it ships a replacement (rule is a no-op on v10).
-      'import-x/no-unused-modules': 'off',
-      'import-x/no-relative-parent-imports': 'off',
-      'import-x/no-relative-packages': 'warn',
+      'import/no-unused-modules': 'off',
+      'import/no-relative-parent-imports': 'off',
+      'import/no-relative-packages': 'warn',
     },
     settings: {
-      'import-x/resolver': {
+      'import/resolver': {
         typescript: {
           alwaysTryTypes: true,
           project: './tsconfig.json',
@@ -70,7 +69,7 @@ module.exports = [
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         },
       },
-      'import-x/parsers': {
+      'import/parsers': {
         '@typescript-eslint/parser': ['.ts', '.tsx'],
       },
     },

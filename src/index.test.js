@@ -11,20 +11,20 @@ describe('@dendavidov/eslint-config (flat config)', () => {
     expect(flatConfig.length).toBeGreaterThan(0);
   });
 
-  it('should include TypeScript, Prettier, Jest, Security, and import-x plugins', () => {
+  it('should include TypeScript, Prettier, Jest, Security, and import plugins', () => {
     const main = flatConfig[0];
     expect(main.plugins).toHaveProperty('@typescript-eslint');
     expect(main.plugins).toHaveProperty('prettier');
     expect(main.plugins).toHaveProperty('jest');
     expect(main.plugins).toHaveProperty('security');
-    expect(main.plugins).toHaveProperty('import-x');
+    expect(main.plugins).toHaveProperty('import');
   });
 
-  it('should apply Prettier, TypeScript, Security, and import-x rules', () => {
+  it('should apply Prettier, TypeScript, Security, and import rules', () => {
     const main = flatConfig[0];
     expect(main.rules).toHaveProperty('prettier/prettier', 'error');
-    expect(main.rules).toHaveProperty('import-x/no-unresolved', 'error');
-    expect(main.rules).toHaveProperty('import-x/order');
+    expect(main.rules).toHaveProperty('import/no-unresolved', 'error');
+    expect(main.rules).toHaveProperty('import/order');
     const ruleKeys = Object.keys(main.rules);
     expect(ruleKeys).toEqual(
       expect.arrayContaining([
@@ -32,8 +32,8 @@ describe('@dendavidov/eslint-config (flat config)', () => {
         'prettier/prettier',
         'no-var',
         'security/detect-bidi-characters',
-        'import-x/no-unresolved',
-        'import-x/order',
+        'import/no-unresolved',
+        'import/order',
       ]),
     );
   });
@@ -53,12 +53,12 @@ describe('@dendavidov/eslint-config (flat config)', () => {
     expect(testConfig.languageOptions.globals).toHaveProperty('it');
   });
 
-  it('should include import-x settings with TypeScript resolver', () => {
+  it('should include import settings with TypeScript and node resolvers', () => {
     const main = flatConfig[0];
-    expect(main.settings).toHaveProperty('import-x/resolver');
-    expect(main.settings['import-x/resolver']).toHaveProperty('typescript');
-    expect(main.settings['import-x/resolver']).toHaveProperty('node');
-    expect(main.settings['import-x/parsers']).toHaveProperty('@typescript-eslint/parser');
+    expect(main.settings).toHaveProperty('import/resolver');
+    expect(main.settings['import/resolver']).toHaveProperty('typescript');
+    expect(main.settings['import/resolver']).toHaveProperty('node');
+    expect(main.settings['import/parsers']).toHaveProperty('@typescript-eslint/parser');
   });
 
   describe('integration usage', () => {
