@@ -21,8 +21,8 @@ importers:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.39.4(jiti@2.6.1))
       eslint-import-resolver-node:
-        specifier: ^0.3.10
-        version: 0.3.10
+        specifier: ^0.4.0
+        version: 0.4.0
       eslint-import-resolver-typescript:
         specifier: ^4.4.4
         version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@9.39.4(jiti@2.6.1))
@@ -313,10 +313,6 @@ packages:
 
   '@commitlint/top-level@21.0.1':
     resolution: {integrity: sha512-4esUYqzY7K0FCgcJ/1xWEZekV7Ch4yZT1+xjEb7KzqbJ05XEkxHVsTfC8ADKNNtlCE2pj98KEbPGZWw9WwEnVw==}
-    engines: {node: '>=22.12.0'}
-
-  '@commitlint/types@21.0.0':
-    resolution: {integrity: sha512-6nEz+M7I90iix4sviA8NLwskOuyt0M98KUU2aYgiKbn46jMSxUm1l2ACtzRd9ec+y38aKyJhW4Fp6NW0z35kJQ==}
     engines: {node: '>=22.12.0'}
 
   '@commitlint/types@21.0.1':
@@ -1436,6 +1432,9 @@ packages:
   eslint-import-resolver-node@0.3.10:
     resolution: {integrity: sha512-tRrKqFyCaKict5hOd244sL6EQFNycnMQnBe+j8uqGNXYzsImGbGUU4ibtoaBmv5FLwJwcFJNeg1GeVjQfbMrDQ==}
 
+  eslint-import-resolver-node@0.4.0:
+    resolution: {integrity: sha512-wV22NewD4lwrMp94THds3/MjW7qPYupLj3wxLZCYkKrSLfVslRS/7lcbogiEwn9oT4cunDDCsTiBo/V16WlEUQ==}
+
   eslint-import-resolver-typescript@4.4.4:
     resolution: {integrity: sha512-1iM2zeBvrYmUNTj2vSC/90JTHDth+dfOfiNKkxApWRsTJYNrc8rOdxxIf5vazX+BiAXTeOT0UvWpGI/7qIWQOw==}
     engines: {node: ^16.17.0 || >=18.6.0}
@@ -1958,6 +1957,10 @@ packages:
 
   is-core-module@2.16.1:
     resolution: {integrity: sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==}
+    engines: {node: '>= 0.4'}
+
+  is-core-module@2.16.2:
+    resolution: {integrity: sha512-evOr8xfXKxE6qSR0hSXL2r3sd7ALj8+7jQEUvPYcm5sgZFdJ+AYzT6yNmJenvIYQBgIGwfwz08sL8zoL7yq2BA==}
     engines: {node: '>= 0.4'}
 
   is-data-view@1.0.2:
@@ -2865,8 +2868,8 @@ packages:
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
-  resolve@2.0.0-next.6:
-    resolution: {integrity: sha512-3JmVl5hMGtJ3kMmB3zi3DL25KfkCEyy3Tw7Gmw7z5w8M9WlwoPFnIvwChzu1+cF3iaK3sp18hhPz8ANeimdJfA==}
+  resolve@2.0.0-next.7:
+    resolution: {integrity: sha512-tqt+NBWwyaMgw3zDsnygx4CByWjQEJHOPMdslYhppaQSJUtL/D4JO9CcBBlhPoI8lz9oJIDXkwXfhF4aWqP8xQ==}
     engines: {node: '>= 0.4'}
     hasBin: true
 
@@ -3699,11 +3702,6 @@ snapshots:
   '@commitlint/top-level@21.0.1':
     dependencies:
       escalade: 3.2.0
-
-  '@commitlint/types@21.0.0':
-    dependencies:
-      conventional-commits-parser: 6.4.0
-      picocolors: 1.1.1
 
   '@commitlint/types@21.0.1':
     dependencies:
@@ -5075,8 +5073,16 @@ snapshots:
   eslint-import-resolver-node@0.3.10:
     dependencies:
       debug: 3.2.7
-      is-core-module: 2.16.1
-      resolve: 2.0.0-next.6
+      is-core-module: 2.16.2
+      resolve: 2.0.0-next.7
+    transitivePeerDependencies:
+      - supports-color
+
+  eslint-import-resolver-node@0.4.0:
+    dependencies:
+      debug: 3.2.7
+      is-core-module: 2.16.2
+      resolve: 2.0.0-next.7
     transitivePeerDependencies:
       - supports-color
 
@@ -5644,6 +5650,10 @@ snapshots:
   is-callable@1.2.7: {}
 
   is-core-module@2.16.1:
+    dependencies:
+      hasown: 2.0.3
+
+  is-core-module@2.16.2:
     dependencies:
       hasown: 2.0.3
 
@@ -6301,13 +6311,13 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.4
+      semver: 7.8.0
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@8.0.0:
     dependencies:
       hosted-git-info: 9.0.2
-      semver: 7.7.4
+      semver: 7.8.0
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
@@ -6636,10 +6646,10 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  resolve@2.0.0-next.6:
+  resolve@2.0.0-next.7:
     dependencies:
       es-errors: 1.3.0
-      is-core-module: 2.16.1
+      is-core-module: 2.16.2
       node-exports-info: 1.6.0
       object-keys: 1.1.1
       path-parse: 1.0.7
