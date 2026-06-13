@@ -1,6 +1,6 @@
 {
   "name": "@dendavidov/eslint-config",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "ESLint flat config for TypeScript/Node.js projects, supporting Node.js 24.x.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
