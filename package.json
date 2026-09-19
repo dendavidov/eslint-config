@@ -16,7 +16,7 @@
   "author": "Denis Davydov mail@dendavidov.com",
   "repository": {
     "type": "git",
-    "url": "git@github.com:dendavidov/eslint-config.git"
+    "url": "git+https://github.com/dendavidov/eslint-config.git"
   },
   "bugs": {
     "url": "https://github.com/dendavidov/eslint-config/issues"
