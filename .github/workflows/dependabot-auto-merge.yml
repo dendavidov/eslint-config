@@ -1,7 +1,11 @@
 name: Dependabot auto-merge
 
 on:
-  pull_request:
+  # Dependabot pull requests are treated like forked pull requests, so repository
+  # Actions secrets are empty on `pull_request`. This workflow never checks out
+  # or executes PR code, making `pull_request_target` safe for the PAT-backed
+  # review and auto-merge operations below.
+  pull_request_target:
     types:
       - opened
       - reopened
@@ -31,4 +35,3 @@ jobs:
 
           # Enable GitHub's auto-merge; it will merge once all required checks (e.g. `checks` workflow) pass
           gh pr merge --auto --squash "$PR_URL"
-
