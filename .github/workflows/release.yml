@@ -38,6 +38,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Run tests
+        run: pnpm test
+
+      # Exercise the exact npm tarball before semantic-release is allowed to publish it.
+      - name: Test packed package in a clean project
+        run: pnpm run test:package
+
       - name: Run release
         run: pnpm run release
         env:

@@ -38,3 +38,6 @@ jobs:
 
       - name: Run tests
         run: pnpm test
+
+      - name: Test packed package in a clean project
+        run: pnpm run test:package
