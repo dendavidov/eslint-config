@@ -16,11 +16,47 @@ permissions:
   pull-requests: write
 
 jobs:
+  sync-docker-node-pin:
+    runs-on: ubuntu-latest
+    if: >-
+      github.actor == 'dependabot[bot]' &&
+      contains(github.event.pull_request.labels.*.name, 'docker')
+    steps:
+      # This workflow runs with pull_request_target privileges, so check out the
+      # Dependabot branch explicitly and only read the Dockerfile. Never execute
+      # code from the pull request here.
+      - name: Checkout Dependabot branch
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Synchronize .nvmrc with the Docker image
+        run: |
+          node_version="$(sed -nE 's/^FROM node:([0-9]+\.[0-9]+\.[0-9]+).*/\1/p' Dockerfile)"
+          if [ -z "$node_version" ]; then
+            echo "Could not find a pinned Node version in Dockerfile" >&2
+            exit 1
+          fi
+
+          printf '%s\n' "$node_version" > .nvmrc
+          if git diff --quiet -- .nvmrc; then
+            echo ".nvmrc is already synchronized with Node $node_version"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .nvmrc
+          git commit -m "build: sync Node pin to $node_version"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+
   enable-auto-merge:
     runs-on: ubuntu-latest
-    # Docker updates only change the image tag, while the repository also pins
-    # Node in .nvmrc. Leave those PRs for manual synchronization so the pin
-    # verification check cannot be bypassed by an immediate auto-merge.
+    # Docker PRs are synchronized above but still require a manual merge. This
+    # prevents repositories without required status checks from merging before
+    # the checks triggered by the synchronization commit have passed.
     if: >-
       github.actor == 'dependabot[bot]' &&
       !contains(github.event.pull_request.labels.*.name, 'docker')
