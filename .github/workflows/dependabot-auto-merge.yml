@@ -18,8 +18,12 @@ permissions:
 jobs:
   enable-auto-merge:
     runs-on: ubuntu-latest
-    # Only run for Dependabot PRs
-    if: github.actor == 'dependabot[bot]'
+    # Docker updates only change the image tag, while the repository also pins
+    # Node in .nvmrc. Leave those PRs for manual synchronization so the pin
+    # verification check cannot be bypassed by an immediate auto-merge.
+    if: >-
+      github.actor == 'dependabot[bot]' &&
+      !contains(github.event.pull_request.labels.*.name, 'docker')
 
     steps:
       - name: Enable auto-merge for Dependabot PR
