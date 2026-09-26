@@ -1,4 +1,4 @@
 # Pinned Node.js image — Dependabot proposes patch/minor updates here.
-# When you merge that PR, set `.nvmrc` and `package.json` engines.node to the same version.
+# Before merging that PR, set `.nvmrc` to the same version.
 # `scripts/verify-node-pins.cjs` enforces alignment in CI.
 FROM node:24.21.0-bookworm-slim
